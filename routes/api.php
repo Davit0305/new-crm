@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminOrders;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\DispatcherController;
+use App\Http\Controllers\Settings;
+use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\WorkersController;
 use Illuminate\Support\Facades\Route;
 
@@ -54,11 +58,13 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::post('/saveNewCity', [\App\Http\Controllers\PointsController::class, 'saveNewCity']);
         Route::post('/addNewPoint', [\App\Http\Controllers\PointsController::class, 'addNewPoint']);
     });
-    Route::prefix('dispatcher')->group(function () {
-        Route::post('/get', [DispatcherController::class, 'get']);
-        Route::post('/save', [DispatcherController::class, 'save']);
-        Route::post('/delete', [DispatcherController::class, 'destroy']);
-        Route::post('/newUser', [DispatcherController::class, 'newUser']);
+    Route::prefix('admin_orders')->group(function () {
+        Route::post('/', [AdminOrders::class, 'index']);
     });
+    Route::prefix('settings')->group(function () {
+        Route::get('/', [SettingsController::class, 'index']);
+        Route::post('/save', [SettingsController::class, 'save']);
+    });
+
     Route::post('/getUser', [\App\Http\Controllers\MainController::class, 'getUser']);
 });
