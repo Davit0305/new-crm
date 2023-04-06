@@ -29,6 +29,7 @@
         "select2": "^4.1.0-rc.0",
         "sweetalert2": "^11.7.1",
         "vue-axios": "^3.5.2",
+        "vue-cal": "^3.11.0",
         "vue-cookies": "^1.8.2",
         "vue-cool-lightbox": "^2.7.5",
         "vue-js-modal": "^2.0.1",

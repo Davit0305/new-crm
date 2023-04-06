@@ -10,7 +10,8 @@ import Operators from './components/views/Operators.vue';
 import Points from './components/views/Points.vue';
 import Reports from './components/views/Reports.vue';
 import Sims from './components/views/Sims.vue';
-
+import AdminOrders from "./components/views/AdminOrders";
+import Settings from "./components/views/Settings";
 export const routes = [
     {
         name: 'login',
@@ -83,5 +84,17 @@ export const routes = [
         path: '/sims',
         meta: { title: 'Сим-карты' },
         component: Sims
+    },
+    {
+        name: 'AdminOrders',
+        path: '/admin_orders',
+        meta: { title: 'заказов в архив' },
+        component: AdminOrders
+    },
+    {
+        name: 'Settings',
+        path: '/settings',
+        meta: { title: 'Настройки системы' },
+        component: Settings
     },
 ];
