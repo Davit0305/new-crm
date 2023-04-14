@@ -12,6 +12,7 @@ import Reports from './components/views/Reports.vue';
 import Sims from './components/views/Sims.vue';
 import AdminOrders from "./components/views/AdminOrders";
 import Settings from "./components/views/Settings";
+import Couriers from "./components/views/Couriers";
 export const routes = [
     {
         name: 'login',
@@ -96,5 +97,11 @@ export const routes = [
         path: '/settings',
         meta: { title: 'Настройки системы' },
         component: Settings
+    },
+    {
+        name: 'Couriers',
+        path: '/couriers',
+        meta: { title: 'Тарифная сетка курьеров' },
+        component: Couriers
     },
 ];

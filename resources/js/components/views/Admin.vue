@@ -37,7 +37,9 @@
             <div class="info">
             </div>
             <div class="subMenu">
-                <a href="javascript:void(0)">Изменить</a>
+                <router-link to="/couriers" title="Посмотреть / изменить настройки">
+                    <a href="javascript:void(0)">Изменить</a>
+                </router-link>
             </div>
         </div>
         <div class="orderBlock block">

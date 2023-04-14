@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminOrders;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\CouriersController;
 use App\Http\Controllers\DispatcherController;
 use App\Http\Controllers\Settings;
 use App\Http\Controllers\SettingsController;
@@ -65,6 +66,9 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::get('/', [SettingsController::class, 'index']);
         Route::post('/save', [SettingsController::class, 'save']);
     });
-
+    Route::prefix('couriers')->group(function () {
+        Route::get('/', [CouriersController::class, 'index']);
+        Route::post('/save', [CouriersController::class, 'save']);
+    });
     Route::post('/getUser', [\App\Http\Controllers\MainController::class, 'getUser']);
 });
