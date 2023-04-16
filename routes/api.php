@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AdminOrders;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\CouriersController;
 use App\Http\Controllers\DispatcherController;
+use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\Settings;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\WorkersController;
@@ -65,6 +67,16 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::get('/', [SettingsController::class, 'index']);
         Route::post('/save', [SettingsController::class, 'save']);
     });
+    Route::prefix('couriers')->group(function () {
+        Route::get('/', [CouriersController::class, 'index']);
+        Route::post('/save', [CouriersController::class, 'save']);
+    });
 
+    Route::prefix('notifications')->group(function () {
+        Route::get('/', [NotificationsController::class, 'index']);
+        Route::post('/save', [NotificationsController::class, 'save']);
+        Route::get('/get_push_user', [NotificationsController::class, 'getUserWithPushToken']);
+        Route::post('/send_push', [NotificationsController::class, 'sendPush']);
+    });
     Route::post('/getUser', [\App\Http\Controllers\MainController::class, 'getUser']);
 });

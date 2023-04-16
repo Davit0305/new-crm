@@ -7,7 +7,7 @@
             </div>
             <div class="subMenu">
                 <router-link to="/admin_orders" title="Переместить заказы в архив">
-                    <a href="javascript:void(0)">Переместить заказы в архив</a>
+                   Переместить заказы в архив
                 </router-link>
             </div>
         </div>
@@ -17,7 +17,7 @@
             </div>
             <div class="subMenu">
                 <router-link to="/settings" title="Посмотреть / изменить настройки">
-                <a href="javascript:void(0)">Посмотреть / изменить настройки</a>
+                Посмотреть / изменить настройки
                 </router-link>
             </div>
         </div>
@@ -37,7 +37,9 @@
             <div class="info">
             </div>
             <div class="subMenu">
-                <a href="javascript:void(0)">Изменить</a>
+                <router-link to="/couriers" title="Посмотреть / изменить настройки">
+                    Изменить
+                </router-link>
             </div>
         </div>
         <div class="orderBlock block">
@@ -45,8 +47,12 @@
             <div class="info">
             </div>
             <div class="subMenu">
-                <a href="javascript:void(0)">Отправка сообщений</a>
-                <a href="javascript:void(0)">Тест пуш-уведомлений</a>
+                <router-link to="/messages" title="Посмотреть / изменить настройки">
+                    Отправка сообщений
+                </router-link>
+                <router-link to="/push_test" title="Посмотреть / изменить настройки">
+                   Тест пуш-уведомлений
+                </router-link>
             </div>
         </div>
     </div>
