@@ -13,6 +13,8 @@ import Sims from './components/views/Sims.vue';
 import AdminOrders from "./components/views/AdminOrders";
 import Settings from "./components/views/Settings";
 import Couriers from "./components/views/Couriers";
+import Messages from "./components/views/Messages";
+import PushTest from "./components/views/PushTest";
 export const routes = [
     {
         name: 'login',
@@ -103,5 +105,17 @@ export const routes = [
         path: '/couriers',
         meta: { title: 'Тарифная сетка курьеров' },
         component: Couriers
+    },
+    {
+        name: 'Messages',
+        path: '/messages',
+        meta: { title: 'Отправка сообщений' },
+        component: Messages
+    },
+    {
+        name: 'PushTest',
+        path: '/push_test',
+        meta: { title: 'Тест пуш-уведомлений' },
+        component: PushTest
     },
 ];
