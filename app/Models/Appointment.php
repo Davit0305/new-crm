@@ -29,4 +29,8 @@ class Appointment extends Model
     ];
 
     protected $appends = [];
+
+    public function worker(){
+        return $this->belongsTo(Worker::class,'job_id','bs_id');
+    }
 }

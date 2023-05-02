@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminOrders;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\CouriersController;
 use App\Http\Controllers\DispatcherController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\Settings;
 use App\Http\Controllers\SettingsController;
@@ -44,6 +45,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/worker/getWorkersSearchData', [\App\Http\Controllers\WorkersController::class, 'getWorkersSearchData']);
     Route::post('/worker/saveWorker', [\App\Http\Controllers\WorkersController::class, 'saveWorker']);
     Route::get('/worker/exportWorkers', [\App\Http\Controllers\WorkersController::class, 'exportWorkers']);
+//    Route::get('worker_xml',[\App\Services\WorkerService::class]);
 
     Route::prefix('drivers')->group(function () {
         Route::post('/get', [\App\Http\Controllers\DriversController::class, 'getDrivers']);
@@ -78,5 +80,8 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::get('/get_push_user', [NotificationsController::class, 'getUserWithPushToken']);
         Route::post('/send_push', [NotificationsController::class, 'sendPush']);
     });
-    Route::post('/getUser', [\App\Http\Controllers\MainController::class, 'getUser']);
+    Route::post('/getUser', [MainController::class, 'getUser']);
+    Route::post('/send-mail1', [MainController::class, 'month1']);
+    Route::post('/send-mail3', [MainController::class, 'month3']);
+    Route::post('/send-mail10', [MainController::class, 'month10']);
 });

@@ -27,9 +27,9 @@
             </div>
             <div class="subMenu"
                  style="display: flex; flex-wrap: nowrap; justify-content: space-around;" >
-                <a id="detailDelayReport" target="_blank" href="javascript:void(0)">Детализация</a>
-                <a id="totalPenaltyOffice" target="_blank" href="javascript:void(0)">Приказ(офис)</a>
-                <a id="totalPenaltyShop" target="_blank" href="javascript:void(0)">Приказы(магазины)</a>
+                <a id="detailDelayReport" @click="sendMailMonth1" href="#">Детализация</a>
+                <a id="totalPenaltyOffice" @click="sendMailMonth3" href="#">Приказ(офис)</a>
+                <a id="totalPenaltyShop" @click="sendMailMonth10" href="#">Приказы(магазины)</a>
             </div>
         </div>
         <div class="orderBlock block">
@@ -128,6 +128,98 @@ export default {
             time1: null,
         };
     },
+    methods: {
+        sendMailMonth1(e) {
+            if(confirm('Продолжить перемещение ?')) {
+                axios.post('/api/send-mail1',
+                    {
+                        date:'',
+                    }
+                )
+                    .then(res => {
+                        window.swal.fire({
+                            title: 'Успешно Перемещено!',
+                            icon: 'success',
+                            showConfirmButton: false,
+                            timer: 1000,
+                            customClass: {
+                                container: 'z-index-max'
+                            }
+                        });
+                    })
+                    .catch(err => {
+                        this.ordersLoaded = true;
+                        window.swal.fire({
+                            title: 'Произошла ошибка!',
+                            icon: 'error',
+                            customClass: {
+                                container: 'z-index-max',
+                            }
+                        })
+                    })
+            }
+        },
+        sendMailMonth3(e) {
+            if(confirm('Продолжить перемещение ?')) {
+                axios.post('/api/send-mail3',
+                    {
+                        date:'',
+                    }
+                )
+                    .then(res => {
+                        window.swal.fire({
+                            title: 'Успешно Перемещено!',
+                            icon: 'success',
+                            showConfirmButton: false,
+                            timer: 1000,
+                            customClass: {
+                                container: 'z-index-max'
+                            }
+                        });
+                    })
+                    .catch(err => {
+                        this.ordersLoaded = true;
+                        window.swal.fire({
+                            title: 'Произошла ошибка!',
+                            icon: 'error',
+                            customClass: {
+                                container: 'z-index-max',
+                            }
+                        })
+                    })
+            }
+        },
+        sendMailMonth10(e) {
+            if(confirm('Продолжить перемещение ?')) {
+                axios.post('/api/send-mail10',
+                    {
+                        date:'',
+                    }
+                )
+                    .then(res => {
+                        window.swal.fire({
+                            title: 'Успешно Перемещено!',
+                            icon: 'success',
+                            showConfirmButton: false,
+                            timer: 1000,
+                            customClass: {
+                                container: 'z-index-max'
+                            }
+                        });
+                    })
+                    .catch(err => {
+                        this.ordersLoaded = true;
+                        window.swal.fire({
+                            title: 'Произошла ошибка!',
+                            icon: 'error',
+                            customClass: {
+                                container: 'z-index-max',
+                            }
+                        })
+                    })
+            }
+        },
+    }
 };
 </script>
 

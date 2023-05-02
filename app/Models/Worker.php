@@ -172,4 +172,7 @@ class Worker extends Model
 
         return $result;
     }
+    public function appointment(){
+        return $this->hasOne(Appointment::class,'bs_id','job_id');
+    }
 }

@@ -8084,6 +8084,89 @@ __webpack_require__.r(__webpack_exports__);
     return {
       time1: null
     };
+  },
+  methods: {
+    sendMailMonth1: function sendMailMonth1(e) {
+      var _this = this;
+      if (confirm('Продолжить перемещение ?')) {
+        axios.post('/api/send-mail1', {
+          date: ''
+        }).then(function (res) {
+          window.swal.fire({
+            title: 'Успешно Перемещено!',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000,
+            customClass: {
+              container: 'z-index-max'
+            }
+          });
+        })["catch"](function (err) {
+          _this.ordersLoaded = true;
+          window.swal.fire({
+            title: 'Произошла ошибка!',
+            icon: 'error',
+            customClass: {
+              container: 'z-index-max'
+            }
+          });
+        });
+      }
+    },
+    sendMailMonth3: function sendMailMonth3(e) {
+      var _this2 = this;
+      if (confirm('Продолжить перемещение ?')) {
+        axios.post('/api/send-mail3', {
+          date: ''
+        }).then(function (res) {
+          window.swal.fire({
+            title: 'Успешно Перемещено!',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000,
+            customClass: {
+              container: 'z-index-max'
+            }
+          });
+        })["catch"](function (err) {
+          _this2.ordersLoaded = true;
+          window.swal.fire({
+            title: 'Произошла ошибка!',
+            icon: 'error',
+            customClass: {
+              container: 'z-index-max'
+            }
+          });
+        });
+      }
+    },
+    sendMailMonth10: function sendMailMonth10(e) {
+      var _this3 = this;
+      if (confirm('Продолжить перемещение ?')) {
+        axios.post('/api/send-mail10', {
+          date: ''
+        }).then(function (res) {
+          window.swal.fire({
+            title: 'Успешно Перемещено!',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000,
+            customClass: {
+              container: 'z-index-max'
+            }
+          });
+        })["catch"](function (err) {
+          _this3.ordersLoaded = true;
+          window.swal.fire({
+            title: 'Произошла ошибка!',
+            icon: 'error',
+            customClass: {
+              container: 'z-index-max'
+            }
+          });
+        });
+      }
+    }
   }
 });
 
@@ -69919,7 +70002,51 @@ var render = function () {
       ),
     ]),
     _vm._v(" "),
-    _vm._m(0),
+    _c("div", { staticClass: "orderBlock block" }, [
+      _c("div", { staticClass: "title" }, [_vm._v("Опоздания")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "info" }),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "subMenu",
+          staticStyle: {
+            display: "flex",
+            "flex-wrap": "nowrap",
+            "justify-content": "space-around",
+          },
+        },
+        [
+          _c(
+            "a",
+            {
+              attrs: { id: "detailDelayReport", href: "#" },
+              on: { click: _vm.sendMailMonth1 },
+            },
+            [_vm._v("Детализация")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              attrs: { id: "totalPenaltyOffice", href: "#" },
+              on: { click: _vm.sendMailMonth3 },
+            },
+            [_vm._v("Приказ(офис)")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              attrs: { id: "totalPenaltyShop", href: "#" },
+              on: { click: _vm.sendMailMonth10 },
+            },
+            [_vm._v("Приказы(магазины)")]
+          ),
+        ]
+      ),
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "orderBlock block" }, [
       _c("div", { staticClass: "title" }, [_vm._v("Тарифная сетка курьеров")]),
@@ -69981,67 +70108,7 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "orderBlock block" }, [
-      _c("div", { staticClass: "title" }, [_vm._v("Опоздания")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "info" }),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "subMenu",
-          staticStyle: {
-            display: "flex",
-            "flex-wrap": "nowrap",
-            "justify-content": "space-around",
-          },
-        },
-        [
-          _c(
-            "a",
-            {
-              attrs: {
-                id: "detailDelayReport",
-                target: "_blank",
-                href: "javascript:void(0)",
-              },
-            },
-            [_vm._v("Детализация")]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              attrs: {
-                id: "totalPenaltyOffice",
-                target: "_blank",
-                href: "javascript:void(0)",
-              },
-            },
-            [_vm._v("Приказ(офис)")]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              attrs: {
-                id: "totalPenaltyShop",
-                target: "_blank",
-                href: "javascript:void(0)",
-              },
-            },
-            [_vm._v("Приказы(магазины)")]
-          ),
-        ]
-      ),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
